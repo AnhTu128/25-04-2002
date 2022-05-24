@@ -1,0 +1,106 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.main{
+  perspective: 1000px;
+  margin-top: 250px;
+}
+body{
+  background-color: rgb(40, 38, 38);
+}
+.box{
+  transform-style: preserve-3d;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  animation: spin 15s infinite linear;
+  margin: 20px auto;
+  transform-origin: 100% 50%;
+  top:100px;
+}
+@keyframes spin {
+  from{
+    transform: rotateX(-45deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(-45deg) rotateY(360deg);
+  }
+}
+.face{
+  width: 300px;
+  height: 300px;
+  border: 5px outset #ccc;
+  text-align: center;
+  font-size: 40pt;
+  position: absolute;
+  animation: pulsate 8s infinite linear;  
+  background-color: #2653ad;
+  transition: transform 1s ease-out, opacity 1s linear;
+  box-sizing: border-box;
+  transform-origin: 50% 300px;
+}
+
+
+.left{
+  transform: rotateY(90deg) translateZ(150px) rotateX(0deg);
+  background: url("https://i.imgur.com/M5Dj0og.jpg");
+  background-size: cover;
+}
+
+.box:hover .left{
+  transform: rotateY(90deg) translateZ(150px) rotateX(-90deg);
+}
+
+
+.right{
+  transform: rotateY(-90deg) translateZ(150px);
+  background: url("https://i.imgur.com/M5Dj0og.jpg");
+  background-size: cover;
+}
+
+.box:hover .right{
+  transform: rotateY(-90deg) translateZ(150px) rotateX(-90deg);
+}
+
+
+
+.front{
+  transform: translateZ(150px);
+  background: url("https://i.imgur.com/M5Dj0og.jpg");
+  background-size: cover;
+}
+
+.box:hover .front{
+  transform: translateZ(150px) rotateX(-90deg);
+}
+
+.back{
+  transform: translateZ(-150px);
+  background: url("https://i.imgur.com/M5Dj0og.jpg");
+  background-size: cover;
+}
+
+.box:hover .back{
+  transform: translateZ(-150px) rotateX(90deg);
+}
+
+
+.top{
+  transform: rotateX(90deg) translateZ(150px);
+  background: url("https://i.imgur.com/H7WCf1e.jpg");
+  background-size: cover;
+  transform-origin: 50% 50%;
+}
+
+.box:hover .top{
+  opacity: 0;
+}
+
+.bottom{
+  transform: rotateX(90deg) translateZ(-150px);
+  background: url("https://i.imgur.com/yFE7oa6.jpg");
+  background-size: cover;
+  transform-origin: 50% 50%;
+}
